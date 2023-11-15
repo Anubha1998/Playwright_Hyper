@@ -1,0 +1,54 @@
+version: "0.1"
+user: anubhas
+key: JvGShZ2Bm8RdgmGFbbx4ZtbOb6DeQ8nqSvtHDZdDY7PzqaZMTq
+matrix: {methods: [tests/test1.js, tests/test2.js, tests/test3.js], os: [win]}
+testSuites: [node $test $methods]
+pre: [npm install, npx playwright install]
+preDirectives:
+    commands: [npm install, npx playwright install]
+    maxRetries: 0
+    shell: ""
+    workingDirectory: ""
+postDirectives:
+    commands: []
+    shell: ""
+    workingDirectory: ""
+jobLabel:
+    - playwright-VanillaJS
+    - win
+    - matrix
+runson: ${matrix.os}
+cacheDirectories:
+    - node_modules
+cacheKey: '{{ checksum "package-lock.json" }}'
+jobID: eb73a562-1e0c-49af-afed-7aac2db40934
+codeDirectory: Playwright_hyper
+framework:
+    name: ""
+    flags: []
+    discoveryFlags: []
+    discoveryType: ""
+    runnerFlags: []
+    workingDirectory: ""
+    isTestNGXMLSuite: false
+    defaultReports: false
+    additional_args: null
+    licenseKey: ""
+    userdefinediscovery: false
+    toscaArgs: null
+    version: ""
+    downloadURL: ""
+    baseCommand: ""
+cypress: false
+betaFeature:
+    setPartiallyCompletedAsCompleted: false
+testType: playwright
+combineTasksInMatrixMode: false
+captureScreenRecordingForScenarios: false
+maxRetriesPreSteps: 0
+triggerMode: false
+sourcePayload:
+    verifySSL: true
+collectLocalGitData: true
+dynamicAllocation: false
+appium: false

@@ -1,0 +1,16 @@
+---
+version: "0.1"
+matrix:
+  os: [win]
+  methods: ['tests/test1.js','tests/test2.js','tests/test3.js']
+runson: ${matrix.os}
+pre:
+  - npm install
+  - npx playwright install
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+testSuites:
+  - node $test $methods
+
+jobLabel: [playwright-VanillaJS, win, matrix] 
