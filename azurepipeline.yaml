@@ -6,7 +6,7 @@ steps:
   - script: >
       wget https://downloads.lambdatest.com/hyperexecute/darwin/hyperexecute
 
-      chmod +x hyperexecute_x86
+      
 
       ./hyperexecute --user anubhas --key JvGShZ2Bm8RdgmGFbbx4ZtbOb6DeQ8nqSvtHDZdDY7PzqaZMTq --config matrix.yaml --verbose
     displayName: Download and Run hyperexecute
