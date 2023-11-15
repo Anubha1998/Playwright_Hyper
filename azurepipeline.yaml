@@ -1,8 +1,17 @@
+trigger:
+  branches:
+    include:
+      - main
+pool:
+  vmImage: windows-latest
 steps:
   - script: >
-      curl -O
-      https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe
+      # Download HyperExecute CLI binary 
+
+      curl -O https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe
+
+
+      # Run the extracted binary
 
       hyperexecute.exe -u $anubhas -k $JvGShZ2Bm8RdgmGFbbx4ZtbOb6DeQ8nqSvtHDZdDY7PzqaZMTq -i matrix.yaml
     displayName: Download and Run hyperexecute
-
