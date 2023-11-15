@@ -11,5 +11,6 @@ steps:
 
       # Run the extracted binary
 
-      hyperexecute.exe --user anubhas --key JvGShZ2Bm8RdgmGFbbx4ZtbOb6DeQ8nqSvtHDZdDY7PzqaZMTq --config matrix.yaml --verbose
+      #hyperexecute.exe --user anubhas --key JvGShZ2Bm8RdgmGFbbx4ZtbOb6DeQ8nqSvtHDZdDY7PzqaZMTq --config matrix.yaml --verbose
+      hyperexecute.exe -u $anubhas -k $JvGShZ2Bm8RdgmGFbbx4ZtbOb6DeQ8nqSvtHDZdDY7PzqaZMTq -i matrix.yaml
     displayName: Download and Run hyperexecute
