@@ -6,7 +6,7 @@ steps:
   - script: >
       # Download HyperExecute CLI binary 
 
-      curl -O https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe
+      wget https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe -OutFile hyperexecute.exe
 
 
       # Run the extracted binary
