@@ -1,10 +1,12 @@
 steps:
   - task: Lambdatest.lambda-azure-pipeline-extention.configuration-task.configuration@1
-    displayName: 'LambdaTest configuration setup'
+    displayName: LambdaTest configuration setup
     inputs:
       connection: Extent
-  - script: |
-      arch -arm64 wget https://downloads.lambdatest.com/hyperexecute/darwin/hyperexecute
+  - script: >
+      wget https://downloads.lambdatest.com/hyperexecute/darwin/hyperexecute
+
       chmod +x hyperexecute
-      arch -arm64 ./hyperexecute --user anubhas --key JvGShZ2Bm8RdgmGFbbx4ZtbOb6DeQ8nqSvtHDZdDY7PzqaZMTq --config matrix.yaml --verbose
-    displayName: 'Download and Run hyperexecute'
+
+      ./hyperexecute --user anubhas --key JvGShZ2Bm8RdgmGFbbx4ZtbOb6DeQ8nqSvtHDZdDY7PzqaZMTq --config matrix.yaml --verbose
+    displayName: Download and Run hyperexecute
