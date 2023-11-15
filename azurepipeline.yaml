@@ -4,11 +4,6 @@ trigger:
       - main
 pool:
   vmImage: windows-latest
-steps:
-  - task: Lambdatest.lambda-azure-pipeline-extention.configuration-task.configuration@1
-    displayName: LambdaTest configuration setup
-    inputs:
-      connection: Extent
   - script: >
       curl -O
       https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe
