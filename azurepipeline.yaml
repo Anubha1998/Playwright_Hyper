@@ -8,7 +8,17 @@ steps:
 
       chmod +x hyperexecute
 
-      file hyperexecute  # Check the architecture of the binary
 
-      ./hyperexecute --user anubhas --key JvGShZ2Bm8RdgmGFbbx4ZtbOb6DeQ8nqSvtHDZdDY7PzqaZMTq --config matrix.yaml --verbose
+      # Check the architecture of the binary
+
+      file hyperexecute
+
+
+      # Run the appropriate architecture based on the agent's architecture
+
+      if [[ "$(uname -m)" == "x86_64" ]]; then
+        ./hyperexecute --user anubhas --key JvGShZ2Bm8RdgmGFbbx4ZtbOb6DeQ8nqSvtHDZdDY7PzqaZMTq --config matrix.yaml --verbose
+      else
+        arch -arm64 ./hyperexecute --user anubhas --key JvGShZ2Bm8RdgmGFbbx4ZtbOb6DeQ8nqSvtHDZdDY7PzqaZMTq --config matrix.yaml --verbose
+      fi
     displayName: Download and Run hyperexecute
