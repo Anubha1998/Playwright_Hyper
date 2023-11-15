@@ -3,7 +3,7 @@ steps:
     displayName: LambdaTest configuration setup
     inputs:
       connection: Extent
-  - script: >
+  - script: |
       curl -O
       https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe
 
